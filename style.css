@@ -5,29 +5,30 @@ body{
 }
 
 .container{
-    width: 200px;
-    height:200px;
+    width: 400px;
+    height:400px;
     position: relative;
+    border:solid 2px red
 }
 
 .circle {
     border-radius: 50%;
-    width: 20%;
-    height: 20%;
+    width: 40px;
+    height: 40px;
     background-color: #00897B;
     position: absolute;
     }
 
 @keyframes bille{
-    0%{ translate: 0px 0px;}
-    100%{ translate: 0px 160px }}
+    0%{top:0%; left:0%;}
+    100%{top: calc(100% - 40px); left:0% }}
 
 @keyframes bille1{
     0%{ opacity: 0;}
     100%{ opacity: 100%;} }
 
 .anim-1{
-    margin-left: 80px;
+    margin-left: calc(50% - 20px);
     animation-name: bille, bille1;
     animation-duration: 2s, 3s;
     animation-iteration-count: infinite;
@@ -36,8 +37,8 @@ body{
 }
 
 @keyframes bille2{
-    0%{ translate: 0px 160px }
-    100%{ translate: 160px 0px }
+    0%{ top:0%;left:calc(100% - 40px) }
+    100%{ top:calc(100% - 40px);left:0% }
 
 }
 
@@ -46,23 +47,22 @@ body{
     transition-timing-function: ease-in-out;
 }
 
-
 @keyframes bille3
 {
-    0%{translate:0px 0px;
+    0%{top: 0%; left: 0%;
         rotate: 90deg;}
 
-    33%{translate: 160px 0px;
+    33%{top: calc(100% - 40px); left: 0%;
         background-color:red;
         border-radius: 0%;
         rotate: -90deg;}
 
-    66%{translate: 0px 160px;
+    66%{top: 0%;left: calc(100% - 40px);
         background-color:greenyellow;
         border-radius: 50%;
         rotate: -90deg;}
 
-    100%{ translate:  160px 160px;
+    100%{ top: calc(100% - 40px); left: calc(100% - 40px);
         border-radius: 0%;
         background-color:blue;
         rotate:90deg; }
@@ -76,17 +76,17 @@ body{
 
 @keyframes bille4
 {
-    0%{ translate:0px 0px }
-    25%{translate: 160px 0px;
+    0%{ top: 0%; left: 0%; }
+    25%{top:calc(100% - 40px);left:0%;
         background-color:red;
-    opacity:0.25;}
-    50%{translate: 0px 160px;
+            opacity:0.25;}
+    50%{top:0%; left:calc(100% - 40px);
         background-color:greenyellow;
-    opacity:0.5}
-    75% { translate:  160px 160px;
+        opacity:0.5}
+    75% { top:calc(100% - 40px);left:calc(100% - 40px);
         background-color:blue;
-    opacity:0.75}   
-    100%{ translate:  0px 0px;
+        opacity:0.75}   
+    100%{ top:0%; left:0%;
         background-color:blue
         }
 }
